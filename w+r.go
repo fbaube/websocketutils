@@ -33,3 +33,12 @@ func WriteAndRead(c *WS.Conn, s string) (string, error) {
 	return v.(string), nil
 }
 
+func WriteAndReturn(c *WS.Conn, s string) error {
+	err := WSJ.Write(ctx, c, s)
+	if err != nil {
+		return fmt.Errorf("WriteAndReturn: " +
+		       "wsConn(%#v).Write(%s) failed: %w", c, s, err)
+	}
+	return nil
+}
+
