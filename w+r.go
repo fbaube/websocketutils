@@ -18,16 +18,16 @@ func init() {
 	// defer cancel()
 }
 
-func writeAndRead(c *WS.Conn, s string) (string, error) {
+func WriteAndRead(c *WS.Conn, s string) (string, error) {
 	err := WSJ.Write(ctx, c, s)
 	if err != nil {
-		return "", fmt.Errorf("writeAndRead: " +
+		return "", fmt.Errorf("WriteAndRead: " +
 		       "wsConn(%#v).Write(%s) failed: %w", c, s, err)
 	}
 	var v interface{}
 	err = WSJ.Read(ctx, c, &v)
 	if err != nil {
-		return "", fmt.Errorf("writeAndRead: " +
+		return "", fmt.Errorf("WriteAndRead: " +
 		       "wsConn(%#v).(wrote:%s).Read() failed: %w", c, s, err)
 	}
 	return v.(string), nil

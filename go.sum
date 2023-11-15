@@ -1,5 +1,7 @@
 github.com/fbaube/wasmutils v0.0.0-20231113153033-26edff313051 h1:O/YI4xjfU6ltiuOPuVQmXdYr+20srhBwH+/ClIdvX9A=
 github.com/fbaube/wasmutils v0.0.0-20231113153033-26edff313051/go.mod h1:Kp24751YH8DnaZ1R2jECZ6tbSHJRPH6FTmxVzG0MtWE=
+github.com/fbaube/wasmutils v0.0.0-20231115150453-c7c10ddb735d h1:bhvdD0OD19tNiApenOjg8144bFOfH2LLD+akJz6MI6I=
+github.com/fbaube/wasmutils v0.0.0-20231115150453-c7c10ddb735d/go.mod h1:Yv24ab7DbaTunolfMWqQVI0g8yCNFu8y5IHxLbwZ0ZE=
 golang.org/x/time v0.4.0 h1:Z81tqI5ddIoXDPvVQ7/7CC9TnLM7ubaFG2qXYd5BbYY=
 golang.org/x/time v0.4.0/go.mod h1:3BpzKBy/shNhVucY/MWOyx10tF3SFh9QdLuxbVysPQM=
 nhooyr.io/websocket v1.8.10 h1:mv4p+MnGrLDcPlBoWsvPP7XCzTYMXP9F9eIGoKbgx7Q=
