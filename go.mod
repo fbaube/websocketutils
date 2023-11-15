@@ -1,4 +1,4 @@
-module github.com/fbaube/wassex
+module github.com/fbaube/websocketutils
 
 go 1.21.4
 
