@@ -1,4 +1,4 @@
-// +build js,wasm
+// NO NO NO NOT YET +build js,wasm
 
 package websocketutils
 
