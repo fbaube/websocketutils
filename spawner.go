@@ -31,9 +31,9 @@ func SpawnUpgradedWSs(w http.ResponseWriter, req *http.Request) {
 	wsuCn := new(WSUConn)
 	wsuCn.Conn = wsCn
 	// Make a net.Conn and get info from it
-	nc := WS.NetConn(DefaultCtx, wsCn, WS.MessageText)
-	la := nc.LocalAddr()
-	ra := nc.RemoteAddr()
+	wsuCn.NC = WS.NetConn(DefaultCtx, wsCn, WS.MessageText)
+	la := wsuCn.NC.LocalAddr()
+	ra := wsuCn.NC.RemoteAddr()
 	fmt.Printf("Spawned: local<%s:%s> remote<%s:%s> \n",
 		la.Network(), la.String(), ra.Network(), ra.String())
 
