@@ -20,6 +20,7 @@ import (
 type WSUConn struct {
      *WS.Conn
      NC net.Conn
+     LocalAddr, RemoteAddr net.Addr
      Protocol, Address string 
 }
 
@@ -87,7 +88,7 @@ func (p *WSUConn) Dial() error {
 	if err == nil {
 	       fmt.Printf("Dial: new websocket OK: %#v \n", *p.Conn)
 	       // NOTE the use of Text, cos we plan to use net/textproto 
-	       p.NC = WS.NetConn(DefaultCtx, p.Conn, WS.MessageText)
+	       p.NC = WS.NetConn(ZeroTimeCtx, p.Conn, WS.MessageText)
 	       // How to test whether it is valid ? 
 	       return nil	
 	}

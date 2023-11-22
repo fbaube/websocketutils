@@ -5,12 +5,13 @@ import (
 	CTX "context"
 )
 
-var DefaultCtx CTX.Context
+var DefaultCtx, ZeroTimeCtx CTX.Context
 var DefaultCtxCancel CTX.CancelFunc 
 
 func init() {
 	DefaultCtx, DefaultCtxCancel =
-		    CTX.WithTimeout(CTX.Background(), time.Minute)
+		    	 CTX.WithTimeout(CTX.Background(), time.Minute)
+	ZeroTimeCtx, _ = CTX.WithTimeout(CTX.Background(), 0)
 	// defer cancel()
 }
 

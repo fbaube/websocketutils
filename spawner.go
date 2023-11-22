@@ -1,6 +1,7 @@
 package websocketutils
 
 import (
+        "net"
 	"net/http"
 	"fmt"
 	WS "nhooyr.io/websocket"
@@ -31,11 +32,14 @@ func SpawnUpgradedWSs(w http.ResponseWriter, req *http.Request) {
 	wsuCn := new(WSUConn)
 	wsuCn.Conn = wsCn
 	// Make a net.Conn and get info from it
-	wsuCn.NC = WS.NetConn(DefaultCtx, wsCn, WS.MessageText)
-	la := wsuCn.NC.LocalAddr()
-	ra := wsuCn.NC.RemoteAddr()
+	wsuCn.NC = WS.NetConn(ZeroTimeCtx, wsCn, WS.MessageText)
+	var ncLA, ncRA net.Addr
+	ncLA = wsuCn.NC.LocalAddr()
+	ncRA = wsuCn.NC.RemoteAddr()
+	wsuCn.LocalAddr  = ncLA
+	wsuCn.RemoteAddr = ncRA
 	fmt.Printf("Spawned: local<%s:%s> remote<%s:%s> \n",
-		la.Network(), la.String(), ra.Network(), ra.String())
+		ncLA.Network(), ncLA.String(), ncRA.Network(), ncRA.String())
 
 	go GlobalUpgradedWebsocketHandler(wsuCn) 
 }
