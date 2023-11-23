@@ -10,7 +10,6 @@ import (
 )
 
 type UpgradedWebsocketHandler func(*WSUConn) 
-// func(p *WS.Conn)(*WSU.WSUConn, error)
 
 var GlobalUpgradedWebsocketHandler UpgradedWebsocketHandler
 
@@ -31,6 +30,7 @@ func SpawnUpgradedWSs(w http.ResponseWriter, req *http.Request) {
 	// "Upgrade"
 	wsuCn := new(WSUConn)
 	wsuCn.Conn = wsCn
+	
 	// Make a net.Conn and get info from it
 	wsuCn.NC = WS.NetConn(ZeroTimeCtx, wsCn, WS.MessageText)
 	var ncLA, ncRA net.Addr

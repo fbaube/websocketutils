@@ -86,7 +86,7 @@ func (p *WSUConn) Dial() error {
 	var err error
 	p.Conn, pRsp, err = WS.Dial(DefaultCtx, p.Address, nil)
 	if err == nil {
-	       fmt.Printf("Dial: new websocket OK: %#v \n", *p.Conn)
+	       // fmt.Printf("Dial: new websocket OK: %#v \n", *p.Conn)
 	       // NOTE the use of Text, cos we plan to use net/textproto 
 	       p.NC = WS.NetConn(ZeroTimeCtx, p.Conn, WS.MessageText)
 	       // How to test whether it is valid ? 
