@@ -128,7 +128,7 @@ func (p *WSUConn) WriteAndReturn(s string) error {
 		return fmt.Errorf("WriteAndReturn: " +
 		       "wsJsonConn(%#v).Write(%s) failed: %w", p.Conn, s, err)
 	}
-	println("SENT(NRN):", s)
+	println("SENT:", s)
 	return nil
 }
 
