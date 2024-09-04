@@ -4,7 +4,7 @@ import (
         "net"
 	"net/http"
 	"fmt"
-	WS "nhooyr.io/websocket"
+	WS "github.com/coder/websocket"
 	// "nhooyr.io/websocket/wsjson"
 	// "crypto/tls"
 )

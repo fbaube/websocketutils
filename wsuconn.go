@@ -6,8 +6,8 @@ import (
 	S "strings"
 	"net"
 	"net/http"
-	WS "nhooyr.io/websocket"         // github.com/nhooyr/websocket
-	WSJ "nhooyr.io/websocket/wsjson" // github.com/nhooyr/websocket/wsjson
+	WS "github.com/coder/websocket"        
+	WSJ "github.com/coder/websocket/wsjson"
 )
 
 // WSUConn is a WebSocket Utils connection, containing both 
